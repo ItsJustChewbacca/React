@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PeopleList from './people.jsx';
+import AddPerson from './AddPerson.jsx';
+
+
 
 
 class App extends Component {
@@ -18,6 +21,7 @@ class App extends Component {
         </h1>
         <p>Welcome</p>
         <PeopleList people={this.state.people} />
+        <AddPerson />
       </div>
     );
   }
