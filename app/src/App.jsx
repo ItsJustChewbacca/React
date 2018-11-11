@@ -35,6 +35,7 @@ class App extends Component {
     console.log('component mounted');
   }
   componentDidUpdate(prevProps, prevState){
+    //Checking previous props and state when updating the DOM
     console.log('component updated');
     console.log(prevProps, prevState);
   }
