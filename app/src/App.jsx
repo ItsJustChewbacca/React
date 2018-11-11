@@ -13,6 +13,22 @@ class App extends Component {
       { name: "Sarbear", age: 21, gender: "Bear/person", id: 3 }
     ]
   }
+
+  addPerson = (person) => {
+    person.id = Math.random();
+    let people = [...this.state.people, person]
+    this.setState({
+      people: people
+    })
+  }
+  deletePerson = (id) => {
+    let people = this.state.people.filter(person => {
+      return person.id !== id
+    });
+    this.setState({
+      people: people
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -20,8 +36,8 @@ class App extends Component {
           Luke's React/Redux App
         </h1>
         <p>Welcome</p>
-        <PeopleList people={this.state.people} />
-        <AddPerson />
+        <PeopleList  deletePerson={this.deletePerson} people={this.state.people} />
+        <AddPerson addPerson={this.addPerson} />
       </div>
     );
   }
