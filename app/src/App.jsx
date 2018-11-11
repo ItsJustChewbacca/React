@@ -13,15 +13,17 @@ class App extends Component {
       { name: "Sarbear", age: 21, gender: "Bear/person", id: 3 }
     ]
   }
-
+  //Passing these functions down as props within the render function.
   addPerson = (person) => {
     person.id = Math.random();
+    // Using the spread operator to make sure I don't alter the original array.
     let people = [...this.state.people, person]
     this.setState({
       people: people
     })
   }
   deletePerson = (id) => {
+    //Using the filter operation to delete from the state to make sure I don't alter the original array
     let people = this.state.people.filter(person => {
       return person.id !== id
     });
