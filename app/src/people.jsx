@@ -1,4 +1,5 @@
 import React from 'react';
+import './people.css';
 
 // Functional Component - Only concerned with the UI
 const PeopleList = ({people, deletePerson}) => { // props.people
