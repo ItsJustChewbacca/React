@@ -8,6 +8,7 @@ const PeopleList = ({people, deletePerson}) => { // props.people
         <div>{person.name}</div>
         <div>{person.age}</div>
         <div>{person.gender}</div>
+        {/* When invoking a function passed down as props - Wrap function in anom arrow function */}
         <button onClick={() => {deletePerson(person.id)}}>Delete Person</button>
       </div>
     ) :  null
